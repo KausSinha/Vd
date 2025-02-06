@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Proposal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ff99cc, #ff6699);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        .container {
+            text-align: center;
+            background: rgba(255, 182, 193, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 2s ease-in-out;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #ff3366;
+            animation: slideIn 1.5s ease-out;
+            transition: transform 0.3s, color 0.3s;
+        }
+        h1:hover {
+            transform: scale(1.1);
+            color: #cc2952;
+        }
+        p {
+            font-size: 1.2em;
+            margin: 15px 0;
+            animation: fadeUp 2s ease-out;
+            transition: color 0.3s, transform 0.3s;
+        }
+        p:hover {
+            color: #cc2952;
+            transform: scale(1.05);
+        }
+        .btn-container {
+            margin-top: 20px;
+            animation: fadeIn 2.5s ease-in-out;
+        }
+        button {
+            background: #ff3366;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s, transform 0.3s;
+        }
+        button:hover {
+            background: #cc2952;
+            transform: scale(1.1);
+        }
+        #response {
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #2ecc71;
+            animation: fadeIn 3s ease-in-out;
+        }
+        .banner {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 182, 193, 0.95);
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            z-index: 1000;
+        }
+        .banner h1 {
+            font-size: 4em;
+            color: #ff3366;
+            animation: slideIn 1.5s ease-out;
+        }
+        .banner p {
+            font-size: 2em;
+            color: #333;
+            animation: fadeUp 2s ease-out;
+        }
+        .banner img {
+            width: 200px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Will You Be My Valentine, Mani Ji? 💖</h1>
+        <p>Make this Valentine's Day special by saying yes!</p>
+        <div class="btn-container">
+            <button onclick="reply('Yes')">Yes</button>
+            <button onclick="reply('No')">No</button>
+        </div>
+        <div id="response"></div>
+        <img src="https://media.giphy.com/media/26FLdmIp6wJr91JAI/giphy.gif" alt="Romantic GIF">
+    </div>
+
+    <div class="banner" id="banner">
+        <div>
+            <h1>Thank You, Mani Ji! 🥰</h1>
+            <p>You've made my day! Let's make this Valentine's Day unforgettable! 💖</p>
+            <img src="https://media.giphy.com/media/26FLdmIp6wJr91JAI/giphy.gif" alt="Romantic GIF">
+        </div>
+    </div>
+
+    <script>
+        function reply(answer) {
+            const response = document.getElementById("response");
+            const banner = document.getElementById("banner");
+            const funnyResponses = [
+                "Mani Ji, don't be so mean! 🥺",
+                "C'mon Mani Ji, you know you want to say yes! 💞",
+                "Say yes already! I'll treat you to chocolates! 🍫",
+                "Maan jao na, Mani Ji! I'll even get you food! 😋🍉",
+                "You're breaking my heart! 💔 Please say yes!",
+		"Don't make me beg, Mani Ji! 😅",
+		"Are you sure, Mani Ji? Think about the chocolates! 🍫",
+		"Come on, don't be shy! You know you love me! 💖",
+		"I’m starting to get worried, Mani Ji… 😳",
+		"NO?! 😱 What happened to my sweet Mani Ji?!",
+		"Okay, okay, I see how it is… 😩",
+		"Mani Ji, you're making me sad now… 💦",
+		"You can't resist, can you? Say YES! 🥳",
+		"You’re just playing hard to get, aren’t you? 😉",
+		"What did I do to deserve this, Mani Ji?! 😔",
+		"Stop playing, say YES already! 🏃‍♂️💨",
+		"Why you gotta make it so hard, Mani Ji? 😅",
+		"Don't do this to me, Mani Ji… 😢",
+		"I’ll cry if you don’t say YES! (Okay, not really, but still…) 😭"
+            ];
+
+            if (answer === 'Yes') {
+                banner.style.display = "flex";
+                response.textContent = "";
+            } else {
+                const randomResponse = funnyResponses[Math.floor(Math.random() * funnyResponses.length)];
+                response.textContent = randomResponse;
+            }
+        }
+    </script>
+</body>
+</html>
